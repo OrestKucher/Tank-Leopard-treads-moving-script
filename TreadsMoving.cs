@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TreadsMoving : MonoBehaviour
 {
-    [SerializeField] float speed = 10f;
+    [SerializeField] float speed = 3f;
     [SerializeField] Material leftTread;
     [SerializeField] Material rightTread;
     float leftTreadYOffsetPos = 0f;
