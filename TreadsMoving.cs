@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class TreadsMoving : MonoBehaviour
 {
-    [SerializeField] float speed = 3f;
-    [SerializeField] Material leftTread;
-    [SerializeField] Material rightTread;
-    float leftTreadYOffsetPos = 0f;
-    float rightTreadYOffsetPos = 0f;
+    [SerializeField] private float speed = 3f;
+    [SerializeField] private Material leftTread;
+    [SerializeField] private Material rightTread;
+    private float leftTreadYOffsetPos = 0f;
+    private float rightTreadYOffsetPos = 0f;
     
 
-    void Update()
+    private void Update()
     {
         if (leftTread == null || rightTread == null) {return;}
 
@@ -42,7 +42,7 @@ public class TreadsMoving : MonoBehaviour
         TrackScrolling(leftTreadDir, rightTreadDir);
     }
      
-    void TrackScrolling(int leftDir, int rightDir) 
+    private void TrackScrolling(int leftDir, int rightDir) 
     { 
       leftTreadYOffsetPos = (leftTreadYOffsetPos + (speed*Time.deltaTime * leftDir)) % 1; 
       rightTreadYOffsetPos = (rightTreadYOffsetPos + (speed*Time.deltaTime * rightDir)) % 1; 
